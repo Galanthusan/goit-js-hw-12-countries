@@ -1,6 +1,7 @@
 import fetchCountries from './fetchCountries';
 import updateCountriesMarkup from './updateCountriesMarkup';
 import updateCountriesListMarkup from './updateCountryListMarkup';
+import '..//../node_modules/toastr/build/toastr.css';
 
 const refs = {
   countriesContainer: document.querySelector('.js-countries'),

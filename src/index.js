@@ -1,5 +1,4 @@
 import './styles.css';
-import './/../node_modules/toastr/build/toastr.css';
 import debounce from 'lodash.debounce';
 import onSearchFormHandler from './js/searchFormHandler';
 
