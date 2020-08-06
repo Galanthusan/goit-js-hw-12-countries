@@ -10,17 +10,18 @@ const refs = {
 function onSearchFormHandler(event) {
   const inputValue = event.target.value;
   refs.countriesContainer.innerHTML = '';
+  if (!inputValue) {
+    return;
+  }
   fetchCountries(inputValue).then(data => {
-    if (data && data.length >= 2 && data.length <= 10) {
+    if (data.length >= 2 && data.length <= 10) {
       updateCountriesListMarkup(data);
-    } else if (data && data.length === 1) {
+    } else if (data.length === 1) {
       updateCountriesMarkup(data);
-    } else if (data && data.length > 10) {
+    } else if (data.length > 10) {
       toastr.error(
         'Too many matches found. Please enter a more spicific query!',
       );
-    } else if (data && !data) {
-      return;
     } else {
       toastr.error('No matches found!');
     }
